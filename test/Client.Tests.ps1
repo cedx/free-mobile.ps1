@@ -7,7 +7,7 @@ using module ../src/Client.psm1
 Describe "Client" {
 	Context "SendMessage" {
 		It "should throw an exception if a network error occurred" {
-			$client = [Client]::new("anonymous", "secret", "http://localhost:10000")
+			$client = [Client]::new("anonymous", "secret", "http://localhost:666")
 			{ $client.SendMessage("Hello World!") } | Should -Throw
 		}
 
