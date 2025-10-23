@@ -66,6 +66,6 @@ class Client {
 			user = $this.Account
 		}
 
-		Invoke-WebRequest -Body $query -UserAgent "PowerShell/$($PSVersionTable.PSVersion)"
+		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body $query -UserAgent "PowerShell/$($global:PSVersionTable.PSVersion)"
 	}
 }
