@@ -14,11 +14,12 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-
+		"New-Client"
+		"Send-Message"
 	)
 
 	NestedModules = @(
-
+		"src/Client.psm1"
 	)
 
 	PrivateData = @{
