@@ -60,12 +60,10 @@ class Client {
 	#>
 	[void] SendMessage([string] $Text) {
 		$trimmedText = $Text.Trim()
-		$query = @{
+		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body @{
 			msg = $trimmedText.Length -gt 160 ? $trimmedText[0..159] : $trimmedText
 			pass = $this.ApiKey
 			user = $this.Account
 		}
-
-		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body $query -UserAgent "PowerShell/$($global:PSVersionTable.PSVersion)"
 	}
 }
