@@ -8,6 +8,7 @@
 	DefaultCommandPrefix = "FreeMobile"
 	Description = "Send SMS messages to your Free Mobile device."
 	GUID = "8a16d600-a064-4037-9147-d13059c6abf7"
+	PowerShellVersion = "7.5"
 
 	AliasesToExport = @()
 	CmdletsToExport = @()
