@@ -1,4 +1,4 @@
-. $PSScriptRoot/Default.ps1
+. "$PSScriptRoot/Default.ps1"
 
 "Publishing the package..."
 $module = Get-Item "FreeMobile.psd1"
