@@ -8,13 +8,15 @@ class Client {
 	.SYNOPSIS
 		The base URL of the remote API endpoint.
 	#>
-	[ValidateNotNull()] [uri] $BaseUrl
+	[ValidateNotNull()]
+	[uri] $BaseUrl
 
 	<#
 	.SYNOPSIS
 		The Free Mobile user name and password.
 	#>
-	[ValidateNotNull()] [pscredential] $Credential
+	[ValidateNotNull()]
+	hidden [pscredential] $Credential
 
 	<#
 	.SYNOPSIS
