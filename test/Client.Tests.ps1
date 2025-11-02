@@ -1,4 +1,4 @@
-using module ../src/Client.psm1
+﻿using module ../src/Client.psm1
 
 <#
 .SYNOPSIS

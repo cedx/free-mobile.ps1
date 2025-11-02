@@ -1,3 +1,4 @@
+using namespace System.Diagnostics.CodeAnalysis
 using module ./Client.psm1
 
 <#
@@ -17,6 +18,7 @@ using module ./Client.psm1
 function New-Client {
 	[CmdletBinding(DefaultParameterSetName = "Credential")]
 	[OutputType([Client])]
+	[SuppressMessage("PSUseShouldProcessForStateChangingFunctions", "")]
 	param (
 		[Parameter(ParameterSetName = "Credential")]
 		[pscredential] $Credential,

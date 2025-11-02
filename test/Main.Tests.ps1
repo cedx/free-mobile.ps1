@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
 	Tests the features of the `Main` module.
 #>
