@@ -1,7 +1,7 @@
 @{
 	DefaultCommandPrefix = "FreeMobile"
-	ModuleVersion = "0.1.0"
-	PowerShellVersion = "7.5"
+	ModuleVersion = "1.0.0"
+	PowerShellVersion = "7.4"
 	RootModule = "src/Main.psm1"
 
 	Author = "Cédric Belin <cedx@outlook.com>"

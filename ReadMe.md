@@ -1,5 +1,5 @@
 # Free Mobile for PowerShell
-![PowerShell](https://badgen.net/static/powershell/%3E%3D7.5/green) ![PSGallery](https://badgen.net/static/module/v0.1.0/blue) ![License](https://badgen.net/static/license/MIT/blue)
+![PowerShell](https://badgen.net/static/powershell/%3E%3D7.5/green) ![PSGallery](https://badgen.net/static/module/v1.0.0/blue) ![License](https://badgen.net/static/license/MIT/blue)
 
 Send SMS messages to your [Free Mobile](https://mobile.free.fr) device,
 in [PowerShell](https://learn.microsoft.com/en-us/powershell).
