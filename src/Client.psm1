@@ -6,50 +6,38 @@ class Client {
 
 	<#
 	.SYNOPSIS
-		The Free Mobile account.
-	#>
-	[ValidateNotNullOrWhiteSpace()] [string] $Account
-
-	<#
-	.SYNOPSIS
-		The Free Mobile API key.
-	#>
-	[ValidateNotNullOrWhiteSpace()] [string] $ApiKey
-
-	<#
-	.SYNOPSIS
 		The base URL of the remote API endpoint.
 	#>
 	[ValidateNotNull()] [uri] $BaseUrl
 
 	<#
 	.SYNOPSIS
-		Creates a new client.
-	.PARAMETER Account
-		The Free Mobile account.
-	.PARAMETER ApiKey
-		The Free Mobile API key.
+		The Free Mobile user name and password.
 	#>
-	Client([string] $Account, [string] $ApiKey) {
-		$this.Account = $Account
-		$this.ApiKey = $ApiKey
+	[ValidateNotNull()] [pscredential] $Credential
+
+	<#
+	.SYNOPSIS
+		Creates a new client.
+	.PARAMETER Credential
+		The Free Mobile user name and password.
+	#>
+	Client([pscredential] $Credential) {
 		$this.BaseUrl = "https://smsapi.free-mobile.fr/"
+		$this.Credential = $Credential
 	}
 
 	<#
 	.SYNOPSIS
 		Creates a new client.
-	.PARAMETER Account
-		The Free Mobile account.
-	.PARAMETER ApiKey
-		The Free Mobile API key.
+	.PARAMETER Credential
+		The Free Mobile user name and password.
 	.PARAMETER BaseUrl
 		The base URL of the remote API endpoint.
 	#>
-	Client([string] $Account, [string] $ApiKey, [string] $BaseUrl) {
-		$this.Account = $Account
-		$this.ApiKey = $ApiKey
+	Client([pscredential] $Credential, [string] $BaseUrl) {
 		$this.BaseUrl = $BaseUrl.EndsWith("/") ? $BaseUrl : "$BaseUrl/"
+		$this.Credential = $Credential
 	}
 
 	<#
@@ -62,8 +50,8 @@ class Client {
 		$trimmedText = $Text.Trim()
 		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body @{
 			msg = $trimmedText.Length -gt 160 ? $trimmedText[0..159] : $trimmedText
-			pass = $this.ApiKey
-			user = $this.Account
+			pass = ConvertFrom-SecureString $this.Credential.Password -AsPlainText
+			user = $this.Credential.UserName
 		}
 	}
 }
