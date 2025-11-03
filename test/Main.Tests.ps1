@@ -13,7 +13,7 @@ Describe "Main" {
 			{ "Hello World!" | Send-FreeMobileMessage -UserName "anonymous" -Password $password -Uri "http://localhost:666" } | Should -Throw
 		}
 
-		It "should throw a `HttpRequestException` if the credentials are invalid" {
+		It "should throw a [HttpRequestException] if the credentials are invalid" {
 			$password = ConvertTo-SecureString "secret" -AsPlainText
 			{ "Hello World!" | Send-FreeMobileMessage -UserName "anonymous" -Password $password } | Should -Throw
 		}

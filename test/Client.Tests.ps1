@@ -12,7 +12,7 @@ Describe "Client" {
 			{ $client.SendMessage("Hello World!") } | Should -Throw
 		}
 
-		It "should throw a `HttpRequestException` if the credentials are invalid" {
+		It "should throw a [HttpRequestException] if the credentials are invalid" {
 			$credential = [pscredential]::new("anonymous", (ConvertTo-SecureString "secret" -AsPlainText))
 			$client = [Client] $credential
 			{ $client.SendMessage("Hello World!") } | Should -Throw
