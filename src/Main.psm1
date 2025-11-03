@@ -20,7 +20,8 @@ function New-Client {
 	[OutputType([Client])]
 	[SuppressMessage("PSUseShouldProcessForStateChangingFunctions", "")]
 	param (
-		[Parameter(ParameterSetName = "Credential")]
+		[Parameter(Mandatory, ParameterSetName = "Credential")]
+		[ValidateNotNull()]
 		[pscredential] $Credential,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName", Position = 0)]
@@ -72,6 +73,7 @@ function Send-Message {
 		[Client] $Client,
 
 		[Parameter(Mandatory, ParameterSetName = "Credential")]
+		[ValidateNotNull()]
 		[pscredential] $Credential,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName")]
