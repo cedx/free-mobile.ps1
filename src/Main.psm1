@@ -67,11 +67,11 @@ function Send-Message {
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $Message,
 
-		[Parameter(ParameterSetName = "Client")]
+		[Parameter(Mandatory, ParameterSetName = "Client")]
 		[ValidateNotNull()]
 		[Client] $Client,
 
-		[Parameter(ParameterSetName = "Credential")]
+		[Parameter(Mandatory, ParameterSetName = "Credential")]
 		[pscredential] $Credential,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName")]
