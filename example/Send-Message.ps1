@@ -5,6 +5,5 @@
 Import-Module FreeMobile
 
 $password = ConvertTo-SecureString "Your API key" -AsPlainText
-"Hello World from PowerShell!" | Send-FreeMobileMessage -UserName "Your account identifier" -Password $password
-
+Send-FreeMobileMessage "Hello World from PowerShell!" -UserName "Your account identifier" -Password $password
 Write-Output "The message was sent successfully."
