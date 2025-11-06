@@ -21,15 +21,12 @@ function New-Client {
 	[SuppressMessage("PSUseShouldProcessForStateChangingFunctions", "")]
 	param (
 		[Parameter(Mandatory, ParameterSetName = "Credential")]
-		[ValidateNotNull()]
 		[pscredential] $Credential,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName", Position = 0)]
-		[ValidateNotNullOrWhiteSpace()]
 		[string] $UserName,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName", Position = 1)]
-		[ValidateNotNull()]
 		[securestring] $Password,
 
 		[ValidateNotNull()]
@@ -65,23 +62,18 @@ function Send-Message {
 	[OutputType([void])]
 	param (
 		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
-		[ValidateNotNullOrWhiteSpace()]
 		[string] $Message,
 
 		[Parameter(Mandatory, ParameterSetName = "Client")]
-		[ValidateNotNull()]
 		[Client] $Client,
 
 		[Parameter(Mandatory, ParameterSetName = "Credential")]
-		[ValidateNotNull()]
 		[pscredential] $Credential,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName")]
-		[ValidateNotNullOrWhiteSpace()]
 		[string] $UserName,
 
 		[Parameter(Mandatory, ParameterSetName = "UserName")]
-		[ValidateNotNull()]
 		[securestring] $Password,
 
 		[Parameter(ParameterSetName = "Credential")]
