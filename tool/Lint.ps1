@@ -2,4 +2,5 @@
 Import-Module PSScriptAnalyzer
 Invoke-ScriptAnalyzer $PSScriptRoot -Recurse
 Invoke-ScriptAnalyzer src -Recurse
+Test-ModuleManifest "$PSScriptRoot/../FreeMobile.psd1" | Out-Null
 Invoke-ScriptAnalyzer test -ExcludeRule PSAvoidUsingConvertToSecureStringWithPlainText -Recurse
