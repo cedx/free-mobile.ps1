@@ -1,0 +1,45 @@
+<Solution>
+	<Folder Name="/Configuration/">
+		<File Path=".editorconfig" />
+		<File Path=".gitattributes" />
+		<File Path=".gitignore" />
+		<File Path="FreeMobile.psd1" />
+		<File Path="PSModules.psd1" />
+	</Folder>
+	<Folder Name="/Documentation/">
+		<File Path="Authors.txt" />
+		<File Path="ChangeLog.md" />
+		<File Path="License.md" />
+		<File Path="ReadMe.md" />
+	</Folder>
+	<Folder Name="/Examples/">
+		<File Path="example/Send-Message.ps1" />
+	</Folder>
+	<Folder Name="/Shared/">
+		<File Path="share/Send-Message.http" />
+	</Folder>
+	<Folder Name="/Scripts/">
+		<File Path="Debug.ps1" />
+		<File Path="Invoke.ps1" />
+	</Folder>
+	<Folder Name="/Scripts/Tools/">
+		<File Path="tool/Clean.ps1" />
+		<File Path="tool/Default.ps1" />
+		<File Path="tool/Install.ps1" />
+		<File Path="tool/Lint.ps1" />
+		<File Path="tool/Publish.ps1" />
+		<File Path="tool/Test.ps1" />
+		<File Path="tool/Update.ps1" />
+	</Folder>
+	<Folder Name="/Sources/">
+		<File Path="src/Client.psm1" />
+		<File Path="src/Main.psm1" />
+	</Folder>
+	<Folder Name="/Tests/">
+		<File Path="test/Client.Tests.ps1" />
+		<File Path="test/Main.Tests.ps1" />
+	</Folder>
+	<Folder Name="/Workflows/">
+		<File Path=".github/workflows/ContinuousIntegration.yaml" />
+	</Folder>
+</Solution>
