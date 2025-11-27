@@ -31,15 +31,15 @@
 		<File Path="tool/Test.ps1" />
 		<File Path="tool/Update.ps1" />
 	</Folder>
-	<Folder Name="/Sources/">
-		<File Path="src/Client.psm1" />
-		<File Path="src/Main.psm1" />
-	</Folder>
-	<Folder Name="/Tests/">
-		<File Path="test/Client.Tests.ps1" />
-		<File Path="test/Main.Tests.ps1" />
-	</Folder>
 	<Folder Name="/Workflows/">
 		<File Path=".github/workflows/ContinuousIntegration.yaml" />
 	</Folder>
+	<Project Path="src/FreeMobile.esproj">
+		<Build />
+		<Deploy />
+	</Project>
+	<Project Path="test/FreeMobile.Tests.esproj">
+		<Build />
+		<Deploy />
+	</Project>
 </Solution>
