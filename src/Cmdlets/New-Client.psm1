@@ -1,7 +1,6 @@
-using namespace Belin.FreeMobile
 using namespace System.Diagnostics.CodeAnalysis
 using namespace System.Management.Automation
-using namespace System.Net
+using module ../Client.psm1
 
 <#
 .SYNOPSIS
@@ -13,7 +12,7 @@ using namespace System.Net
 #>
 function New-Client {
 	[CmdletBinding()]
-	[OutputType([Belin.FreeMobile.Client])]
+	[OutputType([Client])]
 	[SuppressMessage("PSUseShouldProcessForStateChangingFunctions", "")]
 	param (
 		# The Free Mobile user name and password.
@@ -22,10 +21,10 @@ function New-Client {
 		[pscredential] $Credential,
 
 		# The base URL of the remote API endpoint.
-		[uri] $Uri
+		[uri] $Uri = "https://smsapi.free-mobile.fr/"
 	)
 
 	process {
-		[Client]::new($Credential.GetNetworkCredential(), $Uri)
+		[Client]::new($Credential, $Uri)
 	}
 }
