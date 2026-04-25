@@ -91,7 +91,7 @@ class Client {
 		$trimmedText = $this.Text.Trim()
 		$query = @{
 			msg = $trimmedText.Length -gt 160 ? $trimmedText.Substring(0, 160) : $trimmedText
-			pass = ConvertFrom-SecureString $this.Credential.Password -AsPlainText
+			pass = $this.Credential.GetNetworkCredential().Password
 			user = $this.Credential.UserName
 		}
 
