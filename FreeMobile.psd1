@@ -14,11 +14,13 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
+		"Get-Version"
 		"New-Client"
 		"Send-Message"
 	)
 
 	NestedModules = @(
+		"src/Cmdlets/Get-Version.psm1"
 		"src/Cmdlets/New-Client.psm1"
 		"src/Cmdlets/Send-Message.psm1"
 	)
