@@ -20,3 +20,6 @@ jobs:
         run: ./Invoke.ps1 Install
       - name: Run tests
         run: ./Invoke.ps1 Test
+        env:
+          FREEMOBILE_ACCOUNT: ${{secrets.FREEMOBILE_ACCOUNT}}
+          FREEMOBILE_API_KEY: ${{secrets.FREEMOBILE_API_KEY}}
