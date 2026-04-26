@@ -88,13 +88,13 @@ class Client {
 		The message text.
 	#>
 	[void] SendMessage([string] $Text) {
-		$trimmedText = $this.Text.Trim()
+		$trimmedText = $Text.Trim()
 		$query = @{
 			msg = $trimmedText.Length -gt 160 ? $trimmedText.Substring(0, 160) : $trimmedText
 			pass = $this.Credential.GetNetworkCredential().Password
 			user = $this.Credential.UserName
 		}
 
-		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body $query -UserAgent $this.UserAgent
+		Invoke-WebRequest ([uri]::new($this.BaseUrl, "sendmsg")) -Body $query -UserAgent $this.UserAgent | Out-Null
 	}
 }

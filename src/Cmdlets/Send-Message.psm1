@@ -1,10 +1,13 @@
 using namespace System.Management.Automation
 using namespace System.Net.Http
+using module ../Client.psm1
 using module ./New-Client.psm1
 
 <#
 .SYNOPSIS
 	Sends an SMS message to the specified Free Mobile account.
+.INPUTS
+	The message text.
 #>
 function Send-Message {
 	[CmdletBinding(DefaultParameterSetName = "Credential")]
@@ -25,7 +28,7 @@ function Send-Message {
 
 		# The base URL of the remote API endpoint.
 		[Parameter(ParameterSetName = "Credential")]
-		[uri] $Uri
+		[uri] $Uri = "https://smsapi.free-mobile.fr/"
 	)
 
 	begin {
