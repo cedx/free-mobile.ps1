@@ -14,7 +14,7 @@ This will give you an identification key allowing access to the [Free Mobile](ht
 
 ![Screenshot](Screenshot.png)
 
-### Get the library
+### Get the module
 Install the latest version of **Free Mobile for PowerShell**
 with [PSResourceGet](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.psresourceget) package manager:
 
@@ -25,7 +25,7 @@ Install-PSResource Belin.FreeMobile
 For detailed instructions, see the [installation guide](Installation.md).
 
 ## Usage
-This library provides the `Send-FreeMobileMessage` cmdlet, which allows you to send SMS notifications to your mobile phone:
+This module provides the `Send-FreeMobileMessage` cmdlet, which allows you to send SMS notifications to your mobile phone:
 
 ```pwsh
 Import-Module Belin.FreeMobile
