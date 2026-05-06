@@ -1,7 +1,6 @@
 using namespace System.Management.Automation
 using namespace System.Net.Http
 using module ../Client.psm1
-using module ./New-Client.psm1
 
 <#
 .SYNOPSIS

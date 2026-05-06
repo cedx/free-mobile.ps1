@@ -1,6 +1,7 @@
 @{
 	ModuleVersion = "1.0.0"
 	PowerShellVersion = "7.6"
+	RootModule = "src/Main.psm1"
 
 	Author = "Cédric Belin <cedx@outlook.com>"
 	CompanyName = "Cedric-Belin.fr"
@@ -15,11 +16,6 @@
 	FunctionsToExport = @(
 		"New-FreeMobileClient"
 		"Send-FreeMobileMessage"
-	)
-
-	NestedModules = @(
-		"src/Cmdlets/New-Client.psm1"
-		"src/Cmdlets/Send-Message.psm1"
 	)
 
 	PrivateData = @{
