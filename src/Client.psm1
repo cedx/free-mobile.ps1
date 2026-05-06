@@ -1,12 +1,17 @@
 using namespace System.Diagnostics.CodeAnalysis
 using namespace System.Net
-using module ./Cmdlets/Get-Version.psm1
 
 <#
 .SYNOPSIS
 	Sends messages by SMS to a [FreeMobile](https://mobile.free.fr) account.
 #>
 class Client {
+
+	<#
+	.SYNOPSIS
+		The module version.
+	#>
+	hidden static [semver] $Version
 
 	<#
 	.SYNOPSIS
@@ -27,7 +32,7 @@ class Client {
 		The user agent string to use when making requests.
 	#>
 	[ValidateNotNullOrWhiteSpace()]
-	hidden [string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.FreeMobile/$(Get-Version)"
+	hidden [string] $UserAgent = "PowerShell/$($PSVersionTable.PSVersion) | Belin.FreeMobile/$([Client]::Version)"
 
 	<#
 	.SYNOPSIS
@@ -79,6 +84,16 @@ class Client {
 	Client([pscredential] $Credential, [uri] $BaseUrl) {
 		$this.BaseUrl = $BaseUrl
 		$this.Credential = $Credential
+	}
+
+	<#
+	.SYNOPSIS
+		Initializes the class.
+	#>
+	static Client() {
+		$path = "$PSScriptRoot/../Belin.FreeMobile.psd1"
+		$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../FreeMobile.psd1")
+		[Client]::Version = $module.ModuleVersion
 	}
 
 	<#
