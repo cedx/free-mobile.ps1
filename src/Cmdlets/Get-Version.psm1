@@ -16,5 +16,7 @@ function Get-Version {
 	param ()
 
 	if ($Script:Version) { return $Script:Version }
-	($Script:Version = (Import-PowerShellDataFile "$PSScriptRoot/../../FreeMobile.psd1").ModuleVersion)
+	$path = "$PSScriptRoot/../../Belin.FreeMobile.psd1"
+	$module = Import-PowerShellDataFile ((Test-Path $path) ? $path : "$PSScriptRoot/../../FreeMobile.psd1")
+	($Script:Version = [semver] $module.ModuleVersion)
 }
