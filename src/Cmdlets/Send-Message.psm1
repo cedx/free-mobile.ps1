@@ -9,7 +9,7 @@ using module ./New-Client.psm1
 .INPUTS
 	The message text.
 #>
-function Send-Message {
+function Send-FreeMobileMessage {
 	[CmdletBinding(DefaultParameterSetName = "Credential")]
 	[OutputType([void])]
 	param (
@@ -32,7 +32,7 @@ function Send-Message {
 	)
 
 	begin {
-		if ($PSCmdlet.ParameterSetName -eq "Credential") { $Client = New-Client $Credential -Uri $Uri }
+		if ($PSCmdlet.ParameterSetName -eq "Credential") { $Client = New-FreeMobileClient $Credential -Uri $Uri }
 	}
 
 	process {

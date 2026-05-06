@@ -10,7 +10,7 @@ using module ../Client.psm1
 .OUTPUTS
 	The newly created client.
 #>
-function New-Client {
+function New-FreeMobileClient {
 	[CmdletBinding()]
 	[OutputType([Client])]
 	[SuppressMessage("PSUseShouldProcessForStateChangingFunctions", "")]

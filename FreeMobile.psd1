@@ -1,5 +1,4 @@
 @{
-	DefaultCommandPrefix = "FreeMobile"
 	ModuleVersion = "1.0.0"
 	PowerShellVersion = "7.6"
 
@@ -14,8 +13,8 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-		"New-Client"
-		"Send-Message"
+		"New-FreeMobileClient"
+		"Send-FreeMobileMessage"
 	)
 
 	NestedModules = @(
